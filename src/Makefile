@@ -1,19 +1,19 @@
 # Makefile
 
-bin				:= Employee
-cpp				!= find -name '*.cpp'
-cppm			!= find -name '*.cppm'
-std.o  		:= std.o
-std.pcm		:= std.pcm
-std.cppm	:= /usr/lib/llvm-19/share/libc++/v1/std.cppm
+bin       := Employee
+cpp       != find -name '*.cpp'
+cppm      != find -name '*.cppm'
+std.o     := std.o
+std.pcm   := std.pcm
+std.cppm  := /usr/lib/llvm-19/share/libc++/v1/std.cppm
 
-pcm				:= $(std.pcm) $(cppm:.cppm=.pcm)
-obj				:= $(std.o) $(pcm:.pcm=.o) $(cpp:.cpp=.o)
+pcm       := $(std.pcm) $(cppm:.cppm=.pcm)
+obj       := $(std.o) $(pcm:.pcm=.o) $(cpp:.cpp=.o)
 
-cxx				:= clang++-19
-std				:= -std=c++23
-libc++		:= -stdlib=libc++ 
-warn			:= -Wno-reserved-identifier -Wno-reserved-module-identifier
+cxx       := clang++-19
+std       := -std=c++23
+libc++    := -stdlib=libc++ 
+warn      := -Wno-reserved-identifier -Wno-reserved-module-identifier
 
 default: $(bin)
 
